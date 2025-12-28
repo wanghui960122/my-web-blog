@@ -1,0 +1,19 @@
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-[#2c2c2c]: oklch(44 44 44);
+  --color-[#262626]: oklch(38 38 38);
+}
+
+body {
+  height: 100vh;
+  --el-color-primary: rgb(23, 207, 219);
+  cursor: url(https://files.cnblogs.com/files/wkfvawl/cursor.ico),auto;
+}
+
+#app {
+  height: 100%;
+}
