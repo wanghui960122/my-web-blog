@@ -66,7 +66,7 @@ const handleClickAdd = () => {
           class="flex h-[64px] max-w-[1440px] flex-wrap items-center justify-between mx-auto p-0 h-[16]"
         >
           <a
-            href="http://47.97.105.140:8000/index.html"
+            href="http://47.97.122.135"
             class="flex items-center space-x-3 rtl:space-x-reverse"
             ><img src="@/static/png/logo.jpg" class="h-16 w-32.5" alt="logo"
           /></a>

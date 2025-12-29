@@ -167,7 +167,7 @@ const goToArticleDetail = (item) => {
             class="rounded-xl bg-cover"
             :class="[
               !isTag && !isCategary ? 'box' : '',
-              isTag ? 'w-[200px]' : 'w-full h-[200px]',
+              isTag ? 'w-[200px] shrink-0' : 'w-full h-[200px]',
             ]"
             :style="{
               'background-image': `url(${item.cover_image})`,
@@ -260,6 +260,9 @@ const goToArticleDetail = (item) => {
   }
 }
 .w-auto-width-tag {
+ @media (width < 1320px) {
+    width: 495px;
+  }
   @media (width < 1280px) {
     width: 442px;
   }

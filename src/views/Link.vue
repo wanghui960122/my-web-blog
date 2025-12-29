@@ -141,7 +141,7 @@
         <div class="flex mt-6 md:gap-8 md-4">
           <a
             target="_blank"
-            href="http://47.97.105.140:8000/index.html"
+            href="http://47.97.122.135"
             class="bg-[url('/src/assets/link-light.png')] dark:bg-[url('/src/assets/link-dark.png')] bg-cover flex mx-2 md:w-1/5 w-1/2 p-6 items-center rounded-lg transition duration-150 ease-in-out hover:-translate-y-2 hover:scale-105"
             ><img
               class="rounded-full w-[42px] h-[42px]"

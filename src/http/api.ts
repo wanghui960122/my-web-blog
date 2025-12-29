@@ -1,6 +1,6 @@
 import fetchService from './index'
 
-export const baseUrl = 'http://47.97.105.140:8000'
+export const baseUrl = 'http://47.97.122.135:8000'
 
 // 添加一个请求拦截器
 fetchService.addRequestInterceptor((url, options) => {

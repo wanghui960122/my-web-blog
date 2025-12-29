@@ -160,7 +160,7 @@ const handleScroll = () => {
     <div
       class="home-bg bg-cover bg-fixed"
       :style="{
-        'background-image': `url(http://47.97.105.140:8000/file/${bgId})`,
+        'background-image': `url(http://47.97.122.135:8000/file/${bgId})`,
         margin: '0 calc((100% - 100vw) / 2)',
         height: 'calc(100vh - 64px)',
       }"
