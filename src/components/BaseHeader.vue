@@ -60,13 +60,13 @@ const handleClickAdd = () => {
   <div class="header">
     <header class="flex h-[64px] top-0 z-10">
       <nav
-        class="content h-[64px] dark:bg-[#262626] fixed w-full z-20 top-0 start-0 dark:border-gray-600"
+        class="content h-[64px] dark:bg-[#262626] fixed w-full z-99999 top-0 start-0 dark:border-gray-600"
       >
         <div
           class="flex h-[64px] max-w-[1440px] flex-wrap items-center justify-between mx-auto p-0 h-[16]"
         >
           <a
-            href="http://47.97.122.135"
+            href="http://120.55.66.25"
             class="flex items-center space-x-3 rtl:space-x-reverse"
             ><img src="@/static/png/logo.jpg" class="h-16 w-32.5" alt="logo"
           /></a>

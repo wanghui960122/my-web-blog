@@ -158,9 +158,10 @@ const handleScroll = () => {
 <template>
   <div class="home-container">
     <div
-      class="home-bg bg-cover bg-fixed"
+      class="home-bg animate__animated animate__fadeIn bg-cover bg-fixed"
+      ref="homeBg"
       :style="{
-        'background-image': `url(http://47.97.122.135:8000/file/${bgId})`,
+        'background-image': `url(http://120.55.66.25:8000/file/${bgId})`,
         margin: '0 calc((100% - 100vw) / 2)',
         height: 'calc(100vh - 64px)',
       }"
@@ -380,6 +381,9 @@ const handleScroll = () => {
 }
 </style>
 <style lang="scss" scoped>
+.animate__animated {
+  --animate-duration: 1.5s; /* 持续时间改为2秒 */
+}
 .home-container {
   .banner {
     .banner-content {

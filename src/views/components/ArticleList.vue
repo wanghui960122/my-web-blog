@@ -151,7 +151,7 @@ const goToArticleDetail = (item) => {
     <div
       class="flex flex-wrap gap-8 mt-4"
       :class="{
-        'ml-12': isCategary,
+        'ml-12 animate__animated animate__fadeInUp': isCategary,
       }"
     >
       <template v-for="item in articleList" :key="item">
@@ -224,6 +224,9 @@ const goToArticleDetail = (item) => {
   </div>
 </template>
 <style lang="scss" scoped>
+.animate__animated {
+  --animate-duration: .5s; /* 持续时间改为2秒 */
+}
 :deep(.el-page .is-active) {
   background-color: rgb(23, 207, 219);
 }
