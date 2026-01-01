@@ -2,7 +2,7 @@
 import { onMounted, ref, useTemplateRef } from "vue";
 import { timelineApi } from "@/http/api";
 import { useRouter } from "vue-router";
-let size = 0;
+let size = -4;
 const router = useRouter();
 const timelineObj = ref<Record<string, any>>({});
 const timelineList = ref([]);
@@ -32,7 +32,6 @@ const getTimeline = async () => {
     isLoaded.value = true;
   }
 };
-getTimeline();
 const handleNextPage = () => {
   size += 4;
   getTimeline();
@@ -47,9 +46,7 @@ const observe = new IntersectionObserver(
     }
   },
   {
-    root: null, //默认设置为Window窗口视图
-    rootMargin: "0px", //定义根组件的边距 用于扩展/缩小检测范围
-    threshold: 1, //触发比例阈值 可以为数组[0，0.25，0.5，1]
+    rootMargin: "20px", //定义根组件的边距 用于扩展/缩小检测范围
   }
 );
 onMounted(() => {
@@ -65,6 +62,39 @@ const handleClick = (item) => {
     path: `/articleDetail/${item.id}`,
   });
 };
+
+const itemMap = new WeakMap()
+const isInview = (el) => {  
+  return el.getBoundingClientRect().top < window.innerHeight
+}
+const observeItem = new IntersectionObserver(
+  (entries) => {
+   for (const entry of entries) {
+    if (entry.isIntersecting) {
+      itemMap.get(entry.target)
+      entry.target.classList.add('animate__animated', 'animate__fadeInUp')
+      observeItem.unobserve(entry.target)
+    }
+    }
+  },
+  {
+    rootMargin: "0px", //定义根组件的边距 用于扩展/缩小检测范围
+  }
+)
+// animate__animated animate__fadeInUp
+const vSlideIn = {
+  mounted(el: any) {
+    if (isInview(el)) {
+      return
+    }
+    itemMap.set(el, el)
+    observeItem.observe(el);
+  },
+  unmounted(el: any) {
+    observeItem.unobserve(el);
+  },
+}
+
 </script>
 <template>
   <div class="flex justify-center items-center mt-[24px]">
@@ -90,6 +120,7 @@ const handleClick = (item) => {
                 ></div>
               </div>
               <div
+                v-slide-in
                 class="flex items-center mt-8 bg-[#FAFAFA] dark:bg-[#3A3A3A] rounded-xl"
                 v-for="cItem in subItem"
                 @click="handleClick(cItem)"
